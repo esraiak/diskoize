@@ -1,3 +1,19 @@
+"""
+ A decorator to cache the results of a function on disk.
+ 
+Minimal example:
+
+import diskoize from diskoize
+
+@diskoize("/tmp/expensive_computation.db")
+def expensive_computation():
+  print("Computing")
+  return 17
+
+Running this example once will print "Computing" and return 17. Running it again will return 17 without printing anything.
+
+"""
+
 import sqlite3
 import pickle
 import functools
