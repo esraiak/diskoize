@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: diskoize
-Version: 0.1.0
+Version: 0.1.1
 Summary: A memoize-like decorator that caches to disk.
 Author-email: Erik Aas <esraiak@gmail.com>
 License: Copyright (c) 2018 The Python Packaging Authority
