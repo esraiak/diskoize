@@ -67,6 +67,11 @@ This will run all the tests in the `tests` directory. You can also run a specifi
 pytest tests/test_file.py
 ```
 
+# Development
+
+Make a temporary pip install: pip install -e .
+Now you can use the library from any python script, and edits to the local diskoize/ folder will be reflected.
+
 # Remarks
 
 * There is a tension between making this library understandable and making it easy to use.

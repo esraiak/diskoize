@@ -29,9 +29,8 @@ def _make_key(args, kwds):
 
 def diskoize(db_path=None):
   def decorator(func):
-    if not db_path:
-      db_path = os.path.join(tempfile.gettempdir(), f"diskoize_cache_{func.__name__}.db")
-    cache = PersistentMap(db_path)
+    resolved_path = db_path or os.path.join(tempfile.gettempdir(), f"diskoize_cache_{func.__name__}.db")
+    cache = PersistentMap(resolved_path)
     @functools.wraps(func)
     def wrapper(*args, **kwds):
       key = _make_key(args, kwds)
@@ -43,7 +42,3 @@ def diskoize(db_path=None):
       return result
     return wrapper
   return decorator
-
-
-
-
