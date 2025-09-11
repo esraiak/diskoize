@@ -2,7 +2,7 @@ diskoize:memoize::disk:memory
 
 # What is this
 
-Often when I use @functools.lru_cache I find that the cache is erased between python process restarts. This library is the fix!
+When I use @functools.lru_cache, I often want to persist data between python process restarts. This library accomplishes that.
 
 ```bash
 import diskoize

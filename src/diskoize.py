@@ -27,10 +27,13 @@ def _make_key(args, kwds):
   return "_".join(key_parts)
 
 
-def diskoize(db_path=None):
+def diskoize(db_path=None, with_memory_cache=False):
   def decorator(func):
     resolved_path = db_path or os.path.join(tempfile.gettempdir(), f"diskoize_cache_{func.__name__}.db")
-    cache = PersistentMap(resolved_path)
+    if with_memory_cache:
+      cache = PersistentMap(resolved_path, with_memory_cache=True, read_all_to_memory=True)
+    else:
+      cache = PersistentMap(resolved_path)
     @functools.wraps(func)
     def wrapper(*args, **kwds):
       key = _make_key(args, kwds)
