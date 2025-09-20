@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: diskoize
-Version: 0.1.1
+Version: 0.1.2
 Summary: A memoize-like decorator that caches to disk.
 Author-email: Erik Aas <esraiak@gmail.com>
 License: Copyright (c) 2018 The Python Packaging Authority
@@ -36,7 +36,7 @@ diskoize:memoize::disk:memory
 
 # What is this
 
-Often when I use @functools.lru_cache I find that the cache is erased between python process restarts. This library is the fix!
+When I use @functools.lru_cache, I often want to persist data between python process restarts. This library accomplishes that.
 
 ```bash
 import diskoize
