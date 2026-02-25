@@ -1,3 +1,5 @@
+EDIT: Use diskcache instead
+
 diskoize:memoize::disk:memory
 
 # What is this
